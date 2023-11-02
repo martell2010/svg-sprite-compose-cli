@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate-sprite": "svg-sprite-compose -c ./sprite.config.js"
+  },
+  "devDependencies": {
+    "svg-sprite-compose-cli": "^1.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
