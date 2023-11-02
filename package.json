@@ -1,6 +1,6 @@
 {
   "name": "svg-sprite-compose-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " CLI that simplifies and automates the merging of multiple SVG icons into a single sprite. It allows you to combine SVG icons from various directories, apply optional SVGO optimization, and generate a unified SVG sprite with customizable configurations. Streamline your workflow by easily creating SVG sprite icons for use in web applications.",
   "type": "module",
   "bin": {
@@ -36,6 +36,7 @@
     "url": "https://github.com/martell2010/svg-sprite-compose-cli/issues"
   },
   "homepage": "https://github.com/martell2010/svg-sprite-compose-cli#readme",
+  "license": "MIT",
   "dependencies": {
     "commander": "^11.1.0",
     "svg-sprite": "github:martell2010/svg-sprite#fixed-audit-2.0.2",

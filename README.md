@@ -17,7 +17,7 @@ yarn add svg-sprite-compose --dev
 
 ## Usage
 
-To use SvgSpriteComposeCli, add it to your config file (sprite.config.js). Here's an example of how to set up the plugin:
+To use SvgSpriteComposeCli, add it to your config file (sprite.config.mjs). Here's an example of how to set up the plugin:
 
 ```javascript
 import { defineConfig } from "svg-sprite-compose-cli";
@@ -91,9 +91,16 @@ interface PluginConfig {
 
 You can add script to your package.json
 
+Add type `module` to your `package.json` and use file extension `.js` or don't change `package.json` and use `.mjs` for you config file.
+```json
+{
+  "type": "module"
+}
+```
+
 ```json
 "scripts": {
-    "generate-sprite": "svg-sprite-compose -c ./sprite.config.js"
+    "generate-sprite": "svg-sprite-compose -c ./sprite.config.mjs"
 }
 ```
 
@@ -102,7 +109,7 @@ You can add script to your package.json
 Run form command line
 
 ```plantuml
-svg-sprite-compose -c ./sprite.config.js
+svg-sprite-compose -c ./sprite.config.mjs
 ```
 
 ## License
