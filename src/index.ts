@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-import type { PluginConfig } from "./types.ts";
 import { spriteHandler } from "./spriteHandler.ts";
 const program = new Command();
 
@@ -10,7 +9,3 @@ program
   .action(spriteHandler);
 
 program.parse();
-
-export const defineConfig = (config: PluginConfig): PluginConfig => config;
-export { generateSprite } from "./generateSprite.ts";
-export type { PluginConfig } from "./types.ts";
