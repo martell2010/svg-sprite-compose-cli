@@ -1,18 +1,14 @@
 import { PluginConfig } from "./types.ts";
 import { getFullPath } from "./getFullPath.ts";
 
-export async function getConfig(options: { config: string }) {
-  const config: { default: PluginConfig } = await import(
-    getFullPath(options.config)
-  );
-
+export function getConfig(config: PluginConfig) {
   const {
     input,
     output,
     disabled = false,
     defaultSvgoConfig = {},
     idPrefix = "",
-  } = config.default;
+  } = config;
 
   const {
     dir: outputDir,

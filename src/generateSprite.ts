@@ -1,4 +1,4 @@
-import { InputConfig } from "./types.ts";
+import { InputConfig, PluginConfig } from "./types.ts";
 import SVGSprite from "svg-sprite";
 import fs from "fs";
 import path from "path";
@@ -7,7 +7,7 @@ import { getConfig } from "./getConfig.ts";
 import { getFullPath } from "./getFullPath.ts";
 import { generateResultFiles } from "./generateResultFiles.ts";
 
-export const generateSprite = async (options: { config: string }) => {
+export const generateSprite = async (config: PluginConfig) => {
   const {
     input,
     disabled,
@@ -18,7 +18,7 @@ export const generateSprite = async (options: { config: string }) => {
     ids,
     fullOutputDir,
     spriteConfig,
-  } = await getConfig(options);
+  } = getConfig(config);
 
   if (disabled) return;
 
@@ -31,7 +31,7 @@ export const generateSprite = async (options: { config: string }) => {
   ) {
     const { svgoConfig, enableSvgo = true } = inputDirConfig;
 
-    if (!/\.svg$/.test(fileName)) return;
+    if (!fileName.endsWith(".svg")) return;
 
     const filePath = path.join(fullPathDir, fileName);
     const fileContent = fs.readFileSync(filePath, "utf-8");
